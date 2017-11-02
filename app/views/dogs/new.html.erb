@@ -1,0 +1,40 @@
+<div id=dogs>
+<h1>Dog Admissions</h1>
+<%= form_for @dog do |d| %>
+  <% if @dog.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @dog.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= d.label :name %>
+    <%= d.text_field :name %>
+  </div>
+  <div class="field">
+    <%= d.label :pound_location %>
+    <%= d.text_field :pound_location %>
+  </div>
+  <div class="field">
+    <%= d.label :phone_number %>
+    <%= d.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= d.label :age %>
+    <%= d.number_field :age %>
+  </div>
+  <div class="field">
+    <%=d.label :description%>
+    <%=d.text_field :description%>
+  </div>
+  <div class="field">
+    <%= d.label :image %>
+    <%= d.file_field :image %>
+  </div>
+  <div class="actions"><%= d.submit %></div>
+<% end %>
+</div>

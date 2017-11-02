@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
 
   resources :dogs, only: [:new, :create, :destroy, :index, :show]
+  patch '/dogs/:id/adopt', to: 'dogs#adopt', as: 'adopt'
 
 end
