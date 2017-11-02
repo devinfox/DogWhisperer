@@ -1,4 +1,5 @@
-<div><h1>Sign Up</h1>
+<div id="content">
+<h1>Sign Up</h1>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -26,23 +27,6 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
-     <div class="field">
-    <%= f.label :image%>
-    <%= f.file_field :image %>
-  </div>
-     <div class="field">
-    <%= f.label :content%>
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    </br>
-    <%= f.radio_button(:teacher, "true") %>
-    <%= f.label :teacher, "Teacher" %>
-    <%= f.radio_button(:teacher, "false") %>
-    <%= f.label :teacher, "Student"%>
-  
-   </br>
-  
- <div class="actions" class="ui submit button"><%= f.submit %></div>
+  <div class="actions"><%= f.submit %></div>
 <% end %>
 </div>

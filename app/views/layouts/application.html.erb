@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DogWhisperer</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+   <head>
+      <title>DogWhisperer</title>
+      <%= csrf_meta_tags %>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script
+         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+         integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+         crossorigin="anonymous"></script>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   </head>
+   <body>
+      <div class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" 
+                  class="navbar-toggle"
+                  data-toggle="collapse" 
+                  data-target="#mynavbar-content">
+               <span  class="icon-bar"></span>
+               <span  class="icon-bar"></span>
+               <span  class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href=<%=dogs_path%>>DogWhsprr</a>
+            </div>
+            <p>
+               <% if current_user %>
+               Welcome, <%= current_user.name %>
+               &nbsp;&nbsp;|&nbsp;&nbsp;
+               <%= link_to 'Log Out', session_path('logged'), method: :delete %>
+               <% else %>
+               <%= link_to 'Log In', login_path %>
+               &nbsp;&nbsp;|&nbsp;&nbsp;
+               <%= link_to 'Sign Up', new_user_path %>
+               <% end %>
+            </p>
+            <div class="collapse navbar-collapse" id="mynavbar-content">
+               <ul class="nav navbar-nav">
+                  <li><a href=<%=dogs_path%>>Home</a></li>
+                  <li><a  href=<%=new_user_path%>>Sign Up</a></li>
+                  <li><a  href=<%=dogs_path%>>Check Em Out</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <%= yield %>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   </body>
 </html>
+

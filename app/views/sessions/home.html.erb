@@ -1,4 +1,4 @@
-<div class="ui mini form">
+<div class="uiminiform">
 <div id="formbox">
 <h1>Log In</h1>
 <p id="alert"><%= alert %></p>
@@ -12,6 +12,8 @@
     <%= password_field_tag :password %>
   </div>
   <button class="actions">Log In</button>
+  <% if current_user then redirect_to dogs_path %>
+<% end %>
 <% end %>
 </div>
 </div>
