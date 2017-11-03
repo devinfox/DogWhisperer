@@ -5,8 +5,8 @@
          <p id="img"><%= image_tag(@dog.image) %> </p>
          <p> <%= @dog.name %> </p>
          <p> <%= @dog.description %> </p>
-         <p> <%= @dog.age %> </p>
-         <p> <%= @dog.pound_location %> </p>
+         <p> <%= "#{@dog.age} years old" %> </p>
+         <p> <%= "Pick up your new furry friend at the #{@dog.pound_location} pound" %> </p>
          <p> <%= @dog.phone_number %> </p>
          <p><%= link_to 'Want to save more doggies?!', dogs_path %></p>
       </li>

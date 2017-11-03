@@ -10,7 +10,7 @@
       <li>
          <p id="img"><%= image_tag(d.image) %> </p>
          <p><%=d.name%></p>
-         <p><%=d.age%></p>
+         <p><%= "#{d.age} years old" %> </p>
          <p><%= d.pound_location %></p>
          <% if d.user.id == current_user.id %>
          <%= link_to "Delete", dog_path(d), :method => :delete %>
