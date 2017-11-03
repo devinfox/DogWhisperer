@@ -36,6 +36,10 @@
         <%= f.label :confirm_password %>
         <%= f.password_field :password_confirmation %>
       </div>
+      <div class="field">
+        <%= f.label :image %><br>
+        <%= f.file_field :image %>
+      </div>
       <div class="actions"><%= f.submit %></div>
     <% end %>
   </div>

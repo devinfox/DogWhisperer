@@ -25,7 +25,7 @@
                </button>
                <a class="navbar-brand" href=<%=dogs_path%>>DogWhsprr</a>
             </div>
-            <p>
+
                <% if current_user %>
                Welcome, <%= current_user.name %>
                &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -35,7 +35,7 @@
                &nbsp;&nbsp;|&nbsp;&nbsp;
                <%= link_to 'Sign Up', new_user_path %>
                <% end %>
-            </p>
+            
             <div class="collapse navbar-collapse" id="mynavbar-content">
                <ul class="nav navbar-nav">
                   <li><a href=<%=dogs_path%>>Home</a></li>
