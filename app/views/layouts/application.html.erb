@@ -25,17 +25,15 @@
                </button>
                <a class="navbar-brand" href=<%=dogs_path%>>DogWhsprr</a>
             </div>
-
-               <% if current_user %>
-               Welcome, <%= current_user.name %>
-               &nbsp;&nbsp;|&nbsp;&nbsp;
-               <%= link_to 'Log Out', session_path('logged'), method: :delete %>
-               <% else %>
-               <%= link_to 'Log In', login_path %>
-               &nbsp;&nbsp;|&nbsp;&nbsp;
-               <%= link_to 'Sign Up', new_user_path %>
-               <% end %>
-            
+            <% if current_user %>
+            Welcome, <%= current_user.name %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Log Out', session_path('logged'), method: :delete %>
+            <% else %>
+            <%= link_to 'Log In', login_path %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Sign Up', new_user_path %>
+            <% end %>
             <div class="collapse navbar-collapse" id="mynavbar-content">
                <ul class="nav navbar-nav">
                   <li><a href=<%=dogs_path%>>Home</a></li>
@@ -54,4 +52,5 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    </body>
 </html>
+
 

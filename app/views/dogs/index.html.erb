@@ -1,24 +1,24 @@
 <div id="dogs">
-    <h1>Welcome to the Dogs</h1>
-    <h2>Looking for a new home for your pup? <br> <br> Begin <%= link_to 'Here', new_dog_path %></h2><br>
+   <h1>Welcome to the Dogs</h1>
+   <h2>Looking for a new home for your pup? <br> <br> Begin <%= link_to 'Here', new_dog_path %></h2>
+   <br>
 </div>
-
 <div class="dogelist">
-    <ul>
-        <% @dogs.each do |d| %>
-            <% if d.adoptor.nil? %>
-            <li>
-                <p id="img"><%= image_tag(d.image) %> </p> 
-                <p><%=d.name%></p>
-                <p><%=d.age%></p>
-                <p><%= d.pound_location %></p>
-                <% if d.user.id == current_user.id %>
-                    <%= link_to "Delete", dog_path(d), :method => :delete %>
-                    <%= link_to "Edit", edit_path(d) %>
-                <% end %>
-                <p><%= link_to 'Adopt!', adopt_path(d), method: :patch %></p>
-            </li>
-            <% end %>
-        <% end %>
-    </ul>
+   <ul>
+      <% @dogs.each do |d| %>
+      <% if d.adoptor.nil? %>
+      <li>
+         <p id="img"><%= image_tag(d.image) %> </p>
+         <p><%=d.name%></p>
+         <p><%=d.age%></p>
+         <p><%= d.pound_location %></p>
+         <% if d.user.id == current_user.id %>
+         <%= link_to "Delete", dog_path(d), :method => :delete %>
+         <%= link_to "Edit", edit_path(d) %>
+         <% end %>
+         <p><%= link_to 'Adopt!', adopt_path(d), method: :patch %></p>
+      </li>
+      <% end %>
+      <% end %>
+   </ul>
 </div>

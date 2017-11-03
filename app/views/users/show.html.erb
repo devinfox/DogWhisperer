@@ -1,13 +1,12 @@
 <h1>Hello, <%= @user.name %> </h1>
-
-
 <div class="dogelist">
-<ul>
-<li>
-<p id="img"><%= image_tag(@user.image) %> </p> 
-<p> <%= @user.description %> </p> 
-<p> <%= @user.location %> </p>
-<p> <%= @user.email %> </p>
-</li>
-</ul>
+   <ul>
+      <li>
+         <p id="img"><%= image_tag(@user.image) %> </p>
+         <p> <%= @user.description %> </p>
+         <p> <%= @user.location %> </p>
+         <p> <%= @user.email %> </p>
+         <p> <%= link_to "Edit", edit_user_path %> </p>
+      </li>
+   </ul>
 </div>

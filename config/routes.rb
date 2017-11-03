@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get 'sessions/new', to: 'users#show'
   
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :redit]
   
   get '/profile', to: 'users#show'
   get '/profile/edit', to: 'users#edit'
