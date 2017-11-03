@@ -41,6 +41,9 @@
                   <li><a href=<%=dogs_path%>>Home</a></li>
                   <li><a  href=<%=new_user_path%>>Sign Up</a></li>
                   <li><a  href=<%=dogs_path%>>Check Em Out</a></li>
+                  <% if current_user %>
+                  <li><a  href=<%= user_path(current_user.id) %>>Your Profile</a></li>
+                  <% end %>
                </ul>
             </div>
          </div>

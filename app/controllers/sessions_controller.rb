@@ -5,10 +5,11 @@ class SessionsController < ApplicationController
       end
   
      def home
-  
-     end
-    
-     def create
+      if current_user then redirect_to dogs_path
+      end
+    end
+     
+    def create
         # Not using an instance variable since
         # we're not providing the user to a view
         user = User.find_by(email: params[:email])

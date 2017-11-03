@@ -24,6 +24,19 @@ class DogsController < ApplicationController
     end
   end
 
+  def edit
+    @dog = Dog.find(params[:id])
+  end
+
+  def update
+    @dog = Dog.find(params[:id])
+    if @dog.update_attributes(user_params)
+      redirect_to dogs_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @dog = Dog.find(params[:id])
     if current_user == Dog.find(params[:id]).user

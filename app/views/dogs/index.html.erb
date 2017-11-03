@@ -14,6 +14,7 @@
                 <p><%= d.pound_location %></p>
                 <% if d.user.id == current_user.id %>
                     <%= link_to "Delete", dog_path(d), :method => :delete %>
+                    <%= link_to "Edit", edit_path(d) %>
                 <% end %>
                 <p><%= link_to 'Adopt!', adopt_path(d), method: :patch %></p>
             </li>
